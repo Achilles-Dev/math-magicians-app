@@ -4,6 +4,7 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .container {
   display: grid;
   grid-template-columns: repeat(4, 130px);
@@ -41,6 +42,7 @@ button {
   grid-column: 1 / 3;
 }
 
-.operator, .equal {
+.operator,
+.equal {
   background-color: #f19117;
 }
