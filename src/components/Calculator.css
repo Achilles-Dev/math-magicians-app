@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  padding: 5px;
+}
+
+.main-display {
+  grid-column: 1 / -1;
+  background-color: #b3adad;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 5px;
+  font-size: 2.5em;
+  font-weight: initial;
+}
+
+.result-display {
+  font-size: 2em;
+  color: #fff;
+}
+
+button {
+  margin: 1px;
+  border: none;
+  font-weight: initial;
+  font-size: 2em;
+  font-family: monospace;
+  color: black;
+}
+
+#zero {
+  grid-column: 1 / 3;
+}
+
+.operator,
+.equal {
+  background-color: #f19117;
+}
