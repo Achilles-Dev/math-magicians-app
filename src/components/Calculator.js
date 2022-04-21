@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Calculator.css';
 import calculate from './logic/calculate';
 
-const operators = ['+', '-', 'x', '÷', '='];
+const operators = ['+', '-', 'x', '÷', '=', '%'];
 // eslint-disable-next-line react/prefer-stateless-function
 class Calculator extends Component {
   constructor(props) {
@@ -40,14 +40,30 @@ class Calculator extends Component {
   }
 
   updateDisplay = (object, value) => {
-    if (value === '=') {
+    console.log(object);
+    if (value === '=' && !object.total) {
       this.setState({
-        results: object.total,
+        results: '0',
         total: 0,
         next: 0,
         operation: null,
       });
-    } else if (operators.includes(value)) {
+    } else if (value === '=' && object.total) {
+      this.setState({
+        results: object.total,
+        total: object.total,
+        next: 0,
+      });
+    } else if ((value === '+/-' || value === '%') && !object.next && !object.total) {
+      this.setState({
+        results: '0',
+        operation: null,
+      });
+    } else if (value === '%' && object.total) {
+      this.setState({
+        results: `${object.total} ${value}`,
+      });
+    } else if (operators.includes(value) && value !== '=') {
       this.setState({
         results: `${object.total} ${value}`,
       });
@@ -55,9 +71,13 @@ class Calculator extends Component {
       this.setState({
         results: '0',
       });
-    } else {
+    } else if (object.next) {
       this.setState({
         results: object.next,
+      });
+    } else {
+      this.setState({
+        results: '0',
       });
     }
   }
