@@ -40,7 +40,6 @@ class Calculator extends Component {
   }
 
   updateDisplay = (object, value) => {
-    console.log(object);
     if (value === '=' && !object.total) {
       this.setState({
         results: '0',
