@@ -1,13 +1,41 @@
+import { Route, Routes } from 'react-router-dom';
 import Calculator from './components/Calculator';
-import './App.css';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Quote from './pages/Quote';
+import NotMatch from './pages/NotMatch';
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <Calculator />
-      </div>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route
+          exact="true"
+          path="calculator"
+          element={(
+            <div className="calculator-page">
+              <h2>Let&apos;s do some math!</h2>
+              <Calculator />
+            </div>
+          )}
+        />
+        <Route
+          exact="true"
+          path="quote"
+          element={<Quote />}
+        />
+        <Route
+          exact="true"
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="*"
+          element={<NotMatch />}
+        />
+      </Routes>
+    </>
   );
 }
 

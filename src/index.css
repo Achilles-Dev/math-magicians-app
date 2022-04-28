@@ -1,27 +1,69 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.4;
+  color: #444;
+  height: 100%;
+  padding: 2% 4% 0 4%;
+  background: #ddd8d8;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  background: #4dcce2;
+  padding: 2% 5%;
+}
+
+.header-nav nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav nav ul {
+  display: flex;
+  gap: 10px;
+}
+
+.header-nav nav ul li {
+  list-style: none;
+  font-size: 20px;
+}
+
+.header-nav nav ul li a {
+  text-decoration: none;
+}
+
+.home {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote p {
+  font-style: italic;
+}
+
+.calculator-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  padding-bottom: 0;
+}
+
+.active-link {
+  color: orangered;
 }
