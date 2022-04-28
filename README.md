@@ -25,6 +25,11 @@ Run the following:
    npm start
    ```
 
+## Online Versions
+  [Math Magicians Netlify](https://joyful-dolphin-85efd9.netlify.app)
+
+  [Math Magicians Heroku](https://math-magicians-achilles.herokuapp.com/)
+
 
 ### Run tests
 
