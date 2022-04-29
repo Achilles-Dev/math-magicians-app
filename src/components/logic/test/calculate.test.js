@@ -71,4 +71,16 @@ describe('Clicking operations(+,x, etc)', () => {
     const calc = calculate({...newobject}, '=');
     expect(calc).toEqual({operation:null, next: null, total: '50'});
   });
+
+  test('point results in decimal number', () => {
+    const newobject = { ...object, next: '10'};
+    const calc = calculate({...newobject}, '.');
+    expect(calc).toEqual({...newobject, next: '10.'});
+  });
+
+  test('checks for dot already clicked', () => {
+    const newobject = { ...object, next: '10.'};
+    const calc = calculate({...newobject}, '.');
+    expect(calc).toEqual({...newobject, next: '10.'});
+  });
 });
