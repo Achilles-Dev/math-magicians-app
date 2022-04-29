@@ -59,5 +59,16 @@ describe('Clicking operations(+,x, etc)', () => {
     const solve = operate(newobject.total, newobject.next, newobject.operation);
     const calc = calculate({ ...newobject}, 'x');
     expect(calc).toEqual({ next:null, total: solve, operation: 'x' });
+  });
+
+  test('equal sign before any number', () => {
+    const calc = calculate({...object}, '=');
+    expect(calc).toEqual({});
   })
+
+  test('equal sign after two numbers and opertaion', () => {
+    const newobject = {total: '5', next: '10', operation: 'x'};
+    const calc = calculate({...newobject}, '=');
+    expect(calc).toEqual({operation:null, next: null, total: '50'});
+  });
 });
