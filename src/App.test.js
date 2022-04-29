@@ -1,5 +1,7 @@
 import React from 'react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import Calculator from './components/Calculator';
 
 describe('All components', () => {
   test('renders Quote component', () => {
@@ -18,5 +20,10 @@ describe('All components', () => {
   Welcome to our page
 </h2>
 `);
+  });
+  test('renders Calculator component', () => {
+    render(<Calculator />);
+    screen.getAllByRole('button');
+    
   });
 });
