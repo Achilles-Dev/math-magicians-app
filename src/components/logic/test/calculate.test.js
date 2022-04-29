@@ -1,5 +1,5 @@
-import calculate from './calculate';
-import operate from './operate';
+import calculate from '../calculate';
+import operate from '../operate';
 
 const object = {
   total: null,
