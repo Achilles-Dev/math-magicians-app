@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All components renders Home component 1`] = `
+<h2>
+  Welcome to our page
+</h2>
+`;
+
+exports[`All components renders Quote component 1`] = `
+<h2>
+  New Quote
+</h2>
+`;
