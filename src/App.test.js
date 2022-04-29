@@ -10,7 +10,7 @@ describe('All components', () => {
 <h2>
   New Quote
 </h2>
-`); 
+`);
   });
 
   test('renders Home component', () => {
@@ -24,6 +24,5 @@ describe('All components', () => {
   test('renders Calculator component', () => {
     render(<Calculator />);
     screen.getAllByRole('button');
-    
   });
 });
