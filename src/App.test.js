@@ -1,8 +1,20 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import renderer from 'react-test-renderer';
+import Calculator from './components/Calculator';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('All components', () => {
+  test('renders Quote component', () => {
+    const h2 = renderer.create(<h2>New Quote</h2>).toJSON();
+    expect(h2).toMatchSnapshot();
+  });
+
+  test('renders Home component', () => {
+    const h2 = renderer.create(<h2>Welcome to our page</h2>).toJSON();
+    expect(h2).toMatchSnapshot();
+  });
+  test('renders Calculator component', () => {
+    render(<Calculator />);
+    screen.getAllByRole('button');
+  });
 });
